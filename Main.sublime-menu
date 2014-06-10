@@ -1,0 +1,44 @@
+[
+     {
+        "id": "tools",
+        "children":
+        [{
+            "caption": "SublimeREPL",
+            "mnemonic": "r",
+            "id": "SublimeREPL",
+            "children":
+            [
+                {"caption": "Cling",
+                "id": "Cling",
+                "children":[
+                    {"command": "repl_open", 
+                     "caption": "Cling",
+                     "id": "repl_cling",
+                     "mnemonic": "l",
+                     "args": {
+                        "type": "subprocess",
+                        "encoding": "utf8",
+                        "cmd": ["cling", "-std=c++11"],
+                        "cwd": "$file_path",
+                        "external_id": "cling",
+                        "syntax": "Packages/C++/C++.tmLanguage"
+                        }
+                    },
+                    {"command": "repl_open",
+                     "caption": "Cling - RUN current file",
+                     "id": "repl_cling_run",
+                     "mnemonic": "l",
+                     "args": {
+                        "type": "subprocess",
+                        "encoding": "utf8",
+                        "cmd": ["cling", "-std=c++11", "-l", "$file_basename"],
+                        "cwd": "$file_path",
+                        "syntax": "Packages/C++/C++.tmLanguage",
+                        "external_id": "cling"
+                        }
+                    }
+                ]}
+            ]   
+        }]
+    }
+]
